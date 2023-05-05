@@ -6,7 +6,6 @@
 
     <title>Injured In An Auto</title>
     <link href="style.css" rel="stylesheet" />
-	<base href="http://usasavingsguidetoday.com/default/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
     <style>
@@ -243,25 +242,45 @@
 
       <div id="q5" class="px-3 sm:px-0 w-full mx-auto mt-10 hidden">
         <div class="font-bold text-2xl sm:text-3xl text-center mb-5">
-          Do you currently have a lawyer representing your claim?
+          <span class="font-bold">Last Step:</span> Do you currently have a lawyer representing your claim?
         </div>
 
         <div id="lawyer-note" class="text-center font-bold hidden" style="color: red;">Please note, if you have a lawyer representing your claim we cannot help you.</div>
-        <button
-          class="custom-green hover:bg-green-600 text-white font-bold py-4 px-4 rounded w-full text-3xl mb-5"
-          ref="0"
-        >
-          Yes
-        </button>
-        <button
-          class="custom-green hover:bg-green-600 text-white font-bold py-4 px-4 rounded w-full text-3xl mb-5"
-          ref="1"
-        >
-          No
-        </button>
+        <a href="./thankyou.html">
+          <button
+            class="custom-green hover:bg-green-600 text-white font-bold py-4 px-4 rounded w-full text-3xl mb-5"
+            ref="0"
+          >
+            Yes
+          </button>
+          <input name="injured" id="injured" type="hidden" value="" />
+          <input name="cause" id="cause" type="hidden" value="" />
+          <input name="month" id="monthSelected" type="hidden" value="" />
+          <input name="year" id="yearSelected" type="hidden" value="" />
+          <input name="treated" id="treated" type="hidden" value="" />
+          <input name="attorney" id="attorney" type="hidden" value="" />
+          <input name="ip" id="ip" type="hidden" value="" />
+          <input name="clickid" id="clickid" type="hidden" value="" />
+        </a>
+        <a href="./ty.html">
+          <button
+            class="custom-green hover:bg-green-600 text-white font-bold py-4 px-4 rounded w-full text-3xl mb-5"
+            ref="1"
+          >
+            No
+          </button>
+          <input name="injured" id="injured" type="hidden" value="" />
+          <input name="cause" id="cause" type="hidden" value="" />
+          <input name="month" id="monthSelected" type="hidden" value="" />
+          <input name="year" id="yearSelected" type="hidden" value="" />
+          <input name="treated" id="treated" type="hidden" value="" />
+          <input name="attorney" id="attorney" type="hidden" value="" />
+          <input name="ip" id="ip" type="hidden" value="" />
+          <input name="clickid" id="clickid" type="hidden" value="" />
+        </a>
       </div>
 
-      <div id="q6" class="px-3 sm:px-0 w-full mx-auto mt-10 hidden">
+      <!-- <div id="q6" class="px-3 sm:px-0 w-full mx-auto mt-10 hidden">
         <div class="text-xl text-center mb-5">
           <span class="font-bold">Last Step:</span> Fill in your details to see
           how much money you may qualify for.
@@ -345,18 +364,18 @@
               <input name="clickid" id="clickid" type="hidden" value="" />
               <button
                 id="finalSubmit"
-                tyoe="submit"
+                type="submit"
                 class="custom-green hover:bg-green-600 text-white font-bold py-4 px-4 rounded w-full text-3xl mb-5"
               >
                 File Claim Now
               </button>
               <div class="text-center">
-                <img class="mx-auto h-10" src="./assets/badge.png" />
+                <img class="mx-auto h-10" src="../assets/badge.png" />
               </div>
             </div>
           </div>
         </form>
-      </div>
+      </div> -->
 
       <!-- /Questions -->
 
@@ -381,12 +400,12 @@
         <a
           target="_blank"
           class="mr-5"
-          href="https://rightfulcompensation.com/terms-of-service.html"
+          href="./terms-of-service.html"
           >Terms Of Service</a
         >
         <a
           target="_blank"
-          href="https://rightfulcompensation.com/privacy-policy.html"
+          href="./privacy-policy.html"
           >Privacy Policy</a
         >
       </div>
@@ -421,8 +440,8 @@
       const q5 = document.getElementById("q5");
       const buttons5 = q5.querySelectorAll("button");
 
-      const q6 = document.getElementById("q6");
-      const buttons6 = q6.querySelectorAll("button");
+      // const q6 = document.getElementById("q6");
+      // const buttons6 = q6.querySelectorAll("button");
 
       let treatmentConfirm = 0;
       let attorneyConfirm = 0;
@@ -602,98 +621,98 @@
         });
       });
 
-      const form = document.getElementById("finalForm");
-      const submitBtn = document.getElementById("finalSubmit");
+      // const form = document.getElementById("finalForm");
+      // const submitBtn = document.getElementById("finalSubmit");
 
-      submitBtn.addEventListener("click", function (event) {
-        event.preventDefault();
+      // submitBtn.addEventListener("click", function (event) {
+      //   event.preventDefault();
 
-        const firstNameRegex = /^[a-zA-Z-]+$/;
-        const lastNameRegex = /^[a-zA-Z-]+$/;
-        const emailRegex = /\S+@\S+\.\S+/;
-        const phoneRegex = /^\d{11}$/;
-        //const inputVal = form.elements["phone"].value.match(/\d/g).join('');
-        const zipRegex = /^\d{5}$/;
+      //   const firstNameRegex = /^[a-zA-Z-]+$/;
+      //   const lastNameRegex = /^[a-zA-Z-]+$/;
+      //   const emailRegex = /\S+@\S+\.\S+/;
+      //   const phoneRegex = /^\d{11}$/;
+      //   //const inputVal = form.elements["phone"].value.match(/\d/g).join('');
+      //   const zipRegex = /^\d{5}$/;
 
-        if (
-          form.elements["first_name"].value.trim() === "" ||
-          form.elements["last_name"].value.trim() === "" ||
-          !firstNameRegex.test(form.elements["first_name"].value.trim()) ||
-          !lastNameRegex.test(form.elements["last_name"].value.trim())
-        ) {
-          alert("First Name & Last Name Are Required");
-          return;
-        }
+      //   if (
+      //     form.elements["first_name"].value.trim() === "" ||
+      //     form.elements["last_name"].value.trim() === "" ||
+      //     !firstNameRegex.test(form.elements["first_name"].value.trim()) ||
+      //     !lastNameRegex.test(form.elements["last_name"].value.trim())
+      //   ) {
+      //     alert("First Name & Last Name Are Required");
+      //     return;
+      //   }
 
-        if (
-          form.elements["email"].value.trim() === "" ||
-          !emailRegex.test(form.elements["email"].value.trim())
-        ) {
-          alert("A valid Email address is required.");
-          return;
-        }
+      //   if (
+      //     form.elements["email"].value.trim() === "" ||
+      //     !emailRegex.test(form.elements["email"].value.trim())
+      //   ) {
+      //     alert("A valid Email address is required.");
+      //     return;
+      //   }
 
-        if (form.elements["phone"].value !== "") {
-          const inputVal = form.elements["phone"].value.match(/\d/g).join("");
-          if (inputVal.length !== 11 || !phoneRegex.test(inputVal)) {
-            alert("A valid Phone number is required.");
-            return;
-          }
-        } else {
-          alert("A valid Phone number is required.");
-          return;
-        }
+      //   if (form.elements["phone"].value !== "") {
+      //     const inputVal = form.elements["phone"].value.match(/\d/g).join("");
+      //     if (inputVal.length !== 11 || !phoneRegex.test(inputVal)) {
+      //       alert("A valid Phone number is required.");
+      //       return;
+      //     }
+      //   } else {
+      //     alert("A valid Phone number is required.");
+      //     return;
+      //   }
 
-        if (
-          form.elements["zip"].value.trim() === "" ||
-          !zipRegex.test(form.elements["zip"].value.trim())
-        ) {
-          alert("A valid 5-digit ZIP code is required.");
-          return;
-        }
+      //   if (
+      //     form.elements["zip"].value.trim() === "" ||
+      //     !zipRegex.test(form.elements["zip"].value.trim())
+      //   ) {
+      //     alert("A valid 5-digit ZIP code is required.");
+      //     return;
+      //   }
 
-        // Post
+      //   // Post
 
-        const formData = new FormData(form); // get the form data
-        const requestData = {};
-        for (const [key, value] of formData.entries()) {
-          requestData[key] = value;
-        }
+      //   const formData = new FormData(form); // get the form data
+      //   const requestData = {};
+      //   for (const [key, value] of formData.entries()) {
+      //     requestData[key] = value;
+      //   }
 
-        fetch(webhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(requestData),
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok");
-            }
-            //console.log("Webhook submitted successfully");
-          })
-          .catch((error) => {
-            console.error("There was a problem submitting the webhook:", error);
-          });
+      //   fetch(webhookUrl, {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(requestData),
+      //   })
+      //     .then((response) => {
+      //       if (!response.ok) {
+      //         throw new Error("Network response was not ok");
+      //       }
+      //       //console.log("Webhook submitted successfully");
+      //     })
+      //     .catch((error) => {
+      //       console.error("There was a problem submitting the webhook:", error);
+      //     });
 
-        // Redirect
-       let attorneyInput = document.getElementById("attorney");
-       let attorneyValue = attorneyInput.value;
-       if (attorneyValue == "Yes") {
-        window.location = "https://rightfulcompensation.com/mva/ty.html?clickid="+clickidValue;
-       } else {
-        window.location = "https://rightfulcompensation.com/mva/thankyou.html?clickid="+clickidValue;
-      }
-      });
+      //   // Redirect
+      //  let attorneyInput = document.getElementById("attorney");
+      //  let attorneyValue = attorneyInput.value;
+      //  if (attorneyValue == "Yes") {
+      //   window.location = "https://rightfulcompensation.com/mva/ty.html?clickid="+clickidValue;
+      //  } else {
+      //   window.location = "https://rightfulcompensation.com/mva/thankyou.html?clickid="+clickidValue;
+      // }
+      // });
 
      
     </script>
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
       $(document).ready(function () {
         $("#phone").inputmask("+1 (999) 999-9999");
       });
-    </script>
+    </script> -->
   </body>
 </html>

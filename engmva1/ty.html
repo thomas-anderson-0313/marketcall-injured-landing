@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Injured In An Auto</title>
+
+    <style>
+      .custom-green {
+        background-color: #49b74e;
+      }
+
+      .blue-text {
+        color: #0074e0;
+      }
+
+      .red-text {
+        color: #ff0000;
+      }
+
+      .d-select {
+        display: block;
+        width: 100%;
+        background: #fff;
+        border-radius: 4px;
+        border: 1px solid #d2d6dc;
+        box-shadow: 0 0 0 1px rgba(47, 69, 103, 0.22);
+        font-family: Roboto, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 11px 15px;
+        height: 46px;
+        color: #5e727b;
+        margin: 0;
+        outline: none;
+      }
+
+      .loading-bar {
+        transition: width 1s;
+      }
+
+      @keyframes loading {
+        0% {
+          width: 0%;
+        }
+        50% {
+          width: 50%;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+
+      .btn-pulse {
+        display: inline-block;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "3297666737154145");
+      fbq("track", "PageView");
+    </script>
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=3297666737154145&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+  </head>
+  <body>
+    <!-- Main -->
+    <div class="px-3 sm:px-0 w-full sm:w-4/6 mx-auto mt-10">
+      <h2 class="font-bold text-3xl text-center mb-5">
+        Thank You
+      </h2>
+
+      <p class="font-bold mb-16 text-center">
+        The information you provided will be reviewed to see if you qualify.
+      </p>
+
+
+    </div>
+    <!-- /Main -->
+
+    <div class="w-full sm:w-1/2 mx-auto mt-10">
+      <div class="text-xs text-center mb-5">
+        By submitting the above, I authorize an affiliated contractor to call me
+        and send text messages to me about my automotive accident claim
+        application at the number entered above, using an autodialer, even if
+        I'm on a National or State "Do Not Call" list. You can opt-out anytime.
+        Data and message rates may apply.
+      </div>
+      <div class="text-center mt-5">
+        <a
+          target="_blank"
+          class="mr-5"
+          href="./terms-of-service.html"
+          >Terms Of Service</a
+        >
+        <a
+          target="_blank"
+          href="./privacy-policy.html"
+          >Privacy Policy</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
