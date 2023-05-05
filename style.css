@@ -450,6 +450,16 @@ video {
     --tw-ring-opacity: 1;
     --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
 }
+
+.top-sticky-blue{
+    padding: 0.75rem 16rem;
+    background-color: rgb(30 58 138);
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: left;
+  }
+
 @media (min-width: 640px) {
     .sm\:w-1\/2 {
         width: 50%;
@@ -484,4 +494,10 @@ video {
         font-size: 3rem;
         line-height: 1;
     }
+}
+
+@media(max-width:768px) {
+    .top-sticky-blue{
+        padding: 0.75rem;
+      }
 }
